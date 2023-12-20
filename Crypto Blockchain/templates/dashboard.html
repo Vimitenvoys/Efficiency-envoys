@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="./assets/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marvel&family=Open+Sans&family=Poppins&display=swap"
+        rel="stylesheet">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <title>Crypto Fraud</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        body,
+        html {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #9eb2b4;
+            font-family: 'Poppins', sans-serif;
+            overflow: auto;
+            background-color: white;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .filter-dropdown {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="top">
+        <div>
+            <h2 style="font-size:3vmin;">Dashboard</h2>
+        </div>
+        <div></div>
+        <div><a href="{{ url_for('index') }}"><button style="background-color: black;
+    color: white;
+    padding:2%;
+    border-radius:10px;
+    font-size: 2.8vmin;" >Home</button></a>
+        </div>
+    </div>
+    <button type="button" class="btn btn-dark" style="margin-left: 10%; margin-top: 2%;" onclick="downloadPDFPage()">Download PDF</button>
+    <div class="m-5 p-3" style="display:grid;grid-template-columns: 50% 50%;">
+        <div style="display:grid;grid-template-columns: auto auto auto; place-items: center;">
+            <img src="{{ url_for('static', filename='img/transaction.png')}}" alt="">
+            <img src="{{ url_for('static', filename='img/legal_transaction.png')}}" alt="">
+            <img src="{{ url_for('static', filename='img/illegal_transaction.png')}}" alt="">
+            <div class="text-center" style="display:grid;grid-template-rows: auto auto auto;">{{trans['total']}}
+                <div>Transactions</div>
+            </div>
+            <div class="text-center"> 
+                {{trans['legal']}}
+                <div>Legal</div>
+            </div>
+            <div class="text-center">{{trans['illegal']}}
+                <div>Illegal</div>
+            </div>
+        </div>
+
+    </div>
+    <div style="display:grid;grid-template-columns: auto auto auto auto;" class="p-2">
+        <div>All transactions</div>
+        <div></div>
+        <div><input type="text" id="filterInput" placeholder="Search"></div>
+    </div>
+    <div class="filter-dropdown">
+        <label for="filterSelect" class="p-2">Filter by Prediction:</label>
+        <select id="filterSelect" onchange="filterTableByColumnC(this.value)">
+            <option value="">All</option>
+            <!-- Add options based on unique values in Column C -->
+        </select>
+    </div>
+    <div class="overflow-scroll p-2">
+        <table id="dataBody" style="text-align: center;">
+            <thead>
+                 <tr>
+                    <th>txId1</th>
+                    <th>txId2</th>
+                    <th>ts</th>
+                    <th>Sender IP</th>
+                    <th>Receiver IP</th>
+                    <th>Transaction Amount (BTC)</th>
+                    <th>pca_1</th>
+                    <th>pca_2</th>
+                    <th>pca_3</th>
+                    <th>pca_4</th>
+                    <th>pca_5</th> 
+                    <th>pca_6</th>
+                    <th>pca_7</th>
+                    <th>pca_8</th>
+                    <th>pca_9</th>
+                    <th>pca_10</th> 
+                    <th>prediction</th> 
+                </tr> 
+            </thead>
+        </table>
+    </div>
+<script>
+   
+    </script>
+<!------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='/js/script.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

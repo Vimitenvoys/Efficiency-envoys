@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marvel&family=Open+Sans&family=Poppins&display=swap" rel="stylesheet">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+body, html {
+  height: 100%;
+  width:100%;
+  margin: 0; 
+  padding:0;
+  background-color: #9eb2b4;
+  font-family:'Poppins', sans-serif;
+  overflow:auto;
+  background-color: white;
+}
+
+
+</style>
+
+  <body>
+<div id="header">
+ <div id="logo"></div> 
+ <div><a href="{{ url_for('index') }}">Home</a></div>
+  <div><a href="{{ url_for('analytics') }}">Analytics</a></div>
+  <div></div>
+  <div style="border:2px solid black;border-radius:10px; padding:10px;" onclick="window.location.href='http://127.0.0.1:5500/upload.html';"><a href="{{ url_for('upload_page') }}">Get Started</a></div>
+
+</div>
+<div id="body">
+<div style="display:grid; grid-template-rows: auto auto auto auto;">
+ <div><h1 style="font-size:6.6vmin;">Welcome to CyptoFraud</h1></div> 
+ <div><p style="font-size:3vmin;font-weight: 100;">Detect and Prevent Crypto Fraud</p></div> 
+ <div> <button style="border:2px solid black;background-color: white;border-radius:10px; padding:10px;font-size:2vmin;" ><a href="{{ url_for('upload_page') }}" styles="text-decoration: none;">Detect Fraud</a></button> </div> 
+ <div><img  src="{{ url_for('static', filename='img/crypto.svg') }}" height="200px"></div>
+</div>
+
+<div id="middle" style="grid-row-start:2;grid-row-end:2;display: grid; grid-template-rows: auto auto; background-color: gray;">
+  <div style="font-size:2vmin;"><h2>Our Mission</h2></div>
+  <div style="display: grid;grid-template-columns: auto 20% auto 20% auto 20% auto;">
+   <div></div> 
+   <div>
+      <div style="font-size:2vmin;"><h2>Advance Fraud Detection</h2></div>
+      <div style="font-size:1.5vmin;">We provide cutting-edge technology for detecting and preventing cryptocurrency frauds. Trust us to to keep your transactions. </div>
+    </div>
+    <div></div> 
+    <div>
+      <div style="font-size:2vmin;"><h2>Secure and</h2></div>
+      <div style="font-size:1.5vmin;">Work with us from any part of the world </div>
+    </div>
+    <div></div> 
+    <div>
+      <div style="font-size:2vmin;"><h2>Stay Informed</h2></div>
+      <div style="font-size:1.5vmin;">We belive in continous learning and growth. Join us and be a part of the team that values. </div>
+    </div>
+    <div></div> 
+  </div>
+</div>
+
+</div>
+<div id="bottom" style="grid-row-start:3;grid-row-end:3;">
+  <div>
+    <p>CyptoFraud</p>
+    <p>&copy; CyptoFraud 2021. All rights reserved.</p>
+
+    </div>
+  <div>
+    <div>Home</div>
+    <div>Pricing</div>
+    <div>About Us</div>
+    <div>Contact</div>
+
+  </div>
+  <div>
+    <div>Blog</div>
+    <div>Insights</div>
+    <div>Twitter</div>
+    <div>Linkedin</div>
+  </div>
+  <div>
+    <div>Privacy Policy</div>
+    <div>Terms of Service</div>
+
+  </div>
+</div>
+</body>
+</html>
+
+
